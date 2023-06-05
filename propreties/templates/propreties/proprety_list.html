@@ -102,7 +102,7 @@
 					{% for prop in object_list%}
           		        <div class="col-md-4 ftco-animate">
 		    				<div class="destination">
-		    					<a href="hotel-single.html" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{prop.img.url}});">
+		    					<a href="{{prop.get_absolute_url}}" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{prop.img.url}});">
 		    						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -121,14 +121,14 @@
 				    						</p>
 			    						</div>
 			    						<div class="two">
-			    							<span class="price per-price">$40<br><small>/night</small></span>
+			    							<span class="price per-price">${{prop.price}}<br><small>/night</small></span>
 		    							</div>
 		    						</div>
-		    						<p>Far far away, behind the word mountains, far from the countries</p>
+		    						<p>{{prop.desc}}</p>
 		    						<hr>
 		    						<p class="bottom-area d-flex">
-		    							<span><i class="icon-map-o"></i> Miami, Fl</span>
-		    							<span class="ml-auto"><a href="#">Book Now</a></span>
+		    							<span><i class="icon-map-o"></i> {{prop.place}}</span>
+		    							<span class="ml-auto"><a href="{{prop.get_absolute_url}}">Book Now</a></span>
 		    						</p>
 		    					</div>
 		    				</div>

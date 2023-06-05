@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.views.generic import ListView,DetailView
 from .models import *
 
 class PropretyList(ListView):
     model = Proprety
-### filter
+    ### filter
+    ### paginatuin
 class PropretyDetail(DetailView):
-    pass
-### book
+    model = Proprety
+    ### book

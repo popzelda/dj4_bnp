@@ -32,6 +32,9 @@ class Proprety(models.Model):
         if not self.slug:
             self.slug= slugify(self.name, self.pk)
             super().save(*args,**kwargs)
+    def get_absolute_url (self):
+        from django.urls import reverse
+        return reverse('propreties:prop_detail', kwargs={'slug': self.slug})
 
 class ImgProprety(models.Model):
     property=models.ForeignKey(Proprety, on_delete=models.CASCADE, related_name='proprety_img')
