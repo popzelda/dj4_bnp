@@ -3,7 +3,6 @@
 
  {% block content %}
 
-
     <div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_5.jpg' %});">
       <div class="overlay"></div>
       <div class="container">
@@ -20,22 +19,27 @@
     <section class="ftco-section ftco-degree-bg">
       <div class="container">
         <div class="row">
+        	<div class="col-lg-3 sidebar">
 
           </div>
           <div class="col-lg-9">
           	<div class="row">
           		<div class="col-md-12 ftco-animate">
+<!--slider-->
+
           			<div class="single-slider owl-carousel">
+						{% for image in object.proprety_img.all %}
+
           				<div class="item">
-          					<div class="hotel-img" style="background-image: url(images/hotel-2.jpg);"></div>
+          					<div class="hotel-img" style="background-image: url({{image.imgfield.url}});"></div>
           				</div>
-          				<div class="item">
-          					<div class="hotel-img" style="background-image: url(images/hotel-3.jpg);"></div>
-          				</div>
-          				<div class="item">
-          					<div class="hotel-img" style="background-image: url(images/hotel-4.jpg);"></div>
-          				</div>
+
+						{% endfor %}
+
           			</div>
+
+<!--slider-->
+
           		</div>
           		<div class="col-md-12 hotel-single mt-4 mb-5 ftco-animate">
           			<span>Our Best hotels &amp; Rooms</span>

@@ -40,7 +40,7 @@ class ImgProprety(models.Model):
     property=models.ForeignKey(Proprety, on_delete=models.CASCADE, related_name='proprety_img')
     imgfield = models.ImageField(upload_to='propretyimg/')
     def __str__(self):
-        return self.property
+        return self.property.name
 
 class PropretyReview(models.Model):
         author = models.ForeignKey(User,related_name='review_auth',on_delete=models.CASCADE)
