@@ -1,10 +1,14 @@
 from django.shortcuts import render, reverse
 from django.views.generic import ListView,DetailView
 from .models import *
+from django_filters.views import FilterView
+from .filters import PropretyFilter
 
-class PropretyList(ListView):
+class PropretyList(FilterView):
     model = Proprety
     paginate_by = 3
+    filterset_class = PropretyFilter
+    template_name = 'propreties/proprety_list.html'
     ### filter
     ### paginatuin
 

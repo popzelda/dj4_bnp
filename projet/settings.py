@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'propreties',
     'setingss',
     'taggit',
+    'bootstrap4',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'projet.urls'
@@ -122,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 import os
 STATIC_URL = 'static/'
+SATATIC_ROOT = os.path.join(BASE_DIR, 'static', 'staticroot'),
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     "/var/www/static/",
@@ -134,3 +138,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
